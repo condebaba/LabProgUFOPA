@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carteirinha Pet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero" aria-labelledby="titulo-principal">
+      <p class="eyebrow">Gerador de identidade pet</p>
+      <h1 id="titulo-principal">Crie carteiras de identidade para cães e gatos</h1>
+      <p>Preencha os dados do seu animal de estimação e gere uma carteirinha personalizada com foto, cores e detalhes de acordo com o tipo escolhido.</p>
+    </section>
+
+    <section class="workspace" aria-label="Gerador de carteirinha pet">
+      <form class="form-card" id="pet-form">
+        <h2>Dados do animal</h2>
+
+        <label for="tipo">Tipo de animal</label>
+        <select id="tipo" name="tipo">
+          <option value="cao">Cão</option>
+          <option value="gato">Gato</option>
+        </select>
+
+        <label for="nome">Nome do animal</label>
+        <input id="nome" name="nome" type="text" placeholder="Ex.: Thor" maxlength="28" required>
+
+        <label for="raca">Raça</label>
+        <input id="raca" name="raca" type="text" placeholder="Ex.: Vira-lata caramelo" maxlength="34" required>
+
+        <label for="nascimento">Data de nascimento</label>
+        <input id="nascimento" name="nascimento" type="date" required>
+
+        <label for="foto">Foto do pet</label>
+        <input id="foto" name="foto" type="file" accept="image/*">
+
+        <button type="button" id="limpar">Limpar foto e dados</button>
+      </form>
+
+      <article class="pet-id dog" id="carteira" aria-live="polite">
+        <div class="card-top">
+          <div>
+            <span class="badge" id="badge-tipo">Cão</span>
+            <h2>Carteira de Identidade Pet</h2>
+          </div>
+          <span class="paw" aria-hidden="true">🐾</span>
+        </div>
+
+        <div class="card-body">
+          <div class="photo-frame" id="photo-frame">
+            <span id="photo-placeholder">Foto</span>
+            <img id="preview" alt="Foto do animal de estimação">
+          </div>
+
+          <dl class="pet-data">
+            <div>
+              <dt>Nome</dt>
+              <dd id="card-nome">Nome do pet</dd>
+            </div>
+            <div>
+              <dt>Raça</dt>
+              <dd id="card-raca">Raça do pet</dd>
+            </div>
+            <div>
+              <dt>Nascimento</dt>
+              <dd id="card-nascimento">dd/mm/aaaa</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="card-footer">
+          <span id="frase-tipo">Companheiro fiel e cheio de energia</span>
+          <span class="chip">ID PET</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
